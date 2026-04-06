@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tips - TikTok Analytics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { background: white; border-radius: 16px; padding: 48px; max-width: 480px; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        h1 { font-size: 28px; margin-bottom: 12px; color: #1a1a1a; }
+        p { color: #666; margin-bottom: 32px; line-height: 1.6; }
+        .login-btn { display: inline-block; background: #fe2c55; color: white; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-size: 16px; font-weight: 600; transition: background 0.2s; }
+        .login-btn:hover { background: #e0284d; }
+        .logo { font-size: 48px; margin-bottom: 16px; }
+        .scope-info { background: #f8f8f8; border-radius: 8px; padding: 16px; margin-bottom: 24px; text-align: left; font-size: 14px; color: #555; }
+        .scope-info strong { color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📚</div>
+        <h1>Study Tips</h1>
+        <p>TikTok 계정의 영상 성과를 분석하는 도구입니다.<br>아래 버튼을 눌러 TikTok 계정을 연동하세요.</p>
+        <div class="scope-info">
+            <strong>요청하는 권한:</strong><br>
+            • 기본 프로필 정보 (이름, 프로필 사진)<br>
+            • 게시한 영상 목록 및 성과 데이터
+        </div>
+        <a id="loginBtn" href="#" class="login-btn">TikTok으로 로그인</a>
+    </div>
+    <script>
+        const CLIENT_KEY = "sbawcqv9aunlhgmjdf";
+        const REDIRECT_URI = "https://hgb072082.github.io/study-tips/callback.html";
+        const SCOPE = "user.info.profile,video.list";
+
+        const authUrl = `https://www.tiktok.com/v2/auth/authorize/?client_key=${CLIENT_KEY}&scope=${SCOPE}&response_type=code&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&state=study_tips_demo`;
+        document.getElementById("loginBtn").href = authUrl;
+    </script>
+</body>
+</html>
