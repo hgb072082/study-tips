@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tips - TikTok Analytics for Education Creators</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero h1 { font-size: 36px; margin-bottom: 16px; }
+        .hero p { font-size: 18px; color: #b0b0cc; max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
+        .login-btn { display: inline-block; background: #fe2c55; color: white; padding: 16px 48px; border-radius: 8px; text-decoration: none; font-size: 16px; font-weight: 600; transition: background 0.2s; }
+        .login-btn:hover { background: #e0284d; }
+
+        .features { max-width: 900px; margin: -40px auto 0; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .feature-card { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); text-align: center; }
+        .feature-card .icon { font-size: 36px; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 16px; margin-bottom: 8px; color: #1a1a1a; }
+        .feature-card p { font-size: 14px; color: #666; line-height: 1.5; }
+
+        .how-it-works { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .how-it-works h2 { text-align: center; font-size: 24px; margin-bottom: 32px; }
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .step { text-align: center; }
+        .step .num { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; background: #fe2c55; color: white; border-radius: 50%; font-weight: 700; margin-bottom: 12px; }
+        .step h3 { font-size: 15px; margin-bottom: 8px; }
+        .step p { font-size: 13px; color: #666; line-height: 1.5; }
+
+        footer { background: #1a1a2e; color: #888; padding: 32px 20px; text-align: center; margin-top: 60px; font-size: 13px; line-height: 2; }
+        footer a { color: #b0b0cc; text-decoration: none; margin: 0 12px; }
+        footer a:hover { color: white; }
+
+        @media (max-width: 640px) {
+            .features, .steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>📚 Study Tips</h1>
+        <p>TikTok Analytics Platform for Education Content Creators. Understand what works, grow your audience, and make better content.</p>
+        <a id="loginBtn" href="#" class="login-btn">Connect with TikTok</a>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <div class="icon">📊</div>
+            <h3>Performance Analytics</h3>
+            <p>Track views, likes, comments, and shares across all your videos in one dashboard.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📈</div>
+            <h3>Growth Tracking</h3>
+            <p>Monitor your channel growth trends and identify your best-performing content.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🎯</div>
+            <h3>Content Insights</h3>
+            <p>Discover what type of content resonates most with your student audience.</p>
+        </div>
+    </div>
+
+    <div class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="num">1</div>
+                <h3>Connect Your Account</h3>
+                <p>Securely log in with your TikTok account using official OAuth authentication.</p>
+            </div>
+            <div class="step">
+                <div class="num">2</div>
+                <h3>Analyze Your Content</h3>
+                <p>View detailed performance metrics for all your published educational videos.</p>
+            </div>
+            <div class="step">
+                <div class="num">3</div>
+                <h3>Optimize & Grow</h3>
+                <p>Use data-driven insights to create better content and reach more students.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Sling Corp. All rights reserved.<br>
+        <a href="terms.html">Terms of Service</a> |
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="mailto:hamin@slingcorp.kr">Contact Us</a>
+    </footer>
+
+    <script>
+        const CLIENT_KEY = "sbawcqv9aunlhgmjdf";
+        const REDIRECT_URI = "https://hgb072082.github.io/study-tips/callback.html";
+        const SCOPE = "user.info.profile,video.list";
+        const authUrl = `https://www.tiktok.com/v2/auth/authorize/?client_key=${CLIENT_KEY}&scope=${SCOPE}&response_type=code&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&state=study_tips_demo`;
+        document.getElementById("loginBtn").href = authUrl;
+    </script>
+</body>
+</html>
